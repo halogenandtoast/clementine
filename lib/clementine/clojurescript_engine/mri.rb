@@ -1,5 +1,6 @@
 CLASSPATH = []
 
+Dir.glob(CLOJURESCRIPT_HOME + '/lib/*.jar').each {|lib| CLASSPATH << lib}
 %w{clj cljs}.each {|path| CLASSPATH << CLOJURESCRIPT_HOME + "/src/" + path}
 
 require 'clementine/clojurescript_engine/base'
@@ -17,7 +18,7 @@ module Clementine
     def compile
       @options = default_opts.merge(Clementine.options) if Clementine.options
       begin
-        cmd = %Q{#{command} #{File.dirname(@file)} '#{convert_options(@options)}' 2>&1}
+        cmd = %Q{#{command} '#{File.dirname(@file)}' '#{convert_options(@options)}' 2>&1}
         result = `#{cmd}`
       rescue Exception
         raise Error, "compression failed: #{result || $!}"
@@ -49,7 +50,7 @@ module Clementine
         setup_classpath_for_ng
         [nailgun_prefix, 'clojure.main', "#{CLOJURESCRIPT_HOME}/bin/cljsc.clj"].flatten.join(' ')
       else
-        [CLOJURESCRIPT_HOME + '/bin/cljsc -cp ' + lib_dir].flatten.join(' ')
+        ["#{CLOJURESCRIPT_HOME}/bin/cljsc -cp #{lib_dir}"].flatten.join(' ')
       end
     end
 

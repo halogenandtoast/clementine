@@ -16,7 +16,7 @@ task :bootstrap do
   require 'fileutils'
   FileUtils.rm_rf File.join(File.dirname(__FILE__), './closure')
 
-  FileUtils.mkdir File.join(CLOJURESCRIPT_HOME, 'lib')
+  FileUtils.mkdir File.join(CLOJURESCRIPT_HOME, 'lib') 
   FileUtils.mv Dir.glob('lib/*.jar'), File.join(CLOJURESCRIPT_HOME, 'lib')
 end
 
