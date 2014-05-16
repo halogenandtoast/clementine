@@ -50,7 +50,7 @@ module Clementine
         setup_classpath_for_ng
         [nailgun_prefix, 'clojure.main', "#{CLOJURESCRIPT_HOME}/bin/cljsc.clj"].flatten.join(' ')
       else
-        ["#{CLOJURESCRIPT_HOME}/bin/cljsc -cp #{lib_dir}"].flatten.join(' ')
+        ["#{CLOJURESCRIPT_HOME}/bin/cljsc"].flatten.join(' ')
       end
     end
 
