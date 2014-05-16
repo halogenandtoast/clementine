@@ -6,7 +6,10 @@ task :bootstrap do
   # clojurescript home
   CLOJURESCRIPT_HOME = File.join(File.dirname(__FILE__), "ext/clojure-clojurescript")
 
-  $stdout.print "Bootrapping ClojureScript"
+  $stdout.print "Bootrapping ClojureScript\n"
+
+  cmd = "cd #{CLOJURESCRIPT_HOME} && git submodule init && git submodule update"
+  %x( #{cmd} )
 
   # command to download and create jar archives
   cmd = "#{CLOJURESCRIPT_HOME}/script/bootstrap"
