@@ -7,6 +7,8 @@ Clementine
 Description
 -----------
 
+*THIS PARTICULAR FORK OF CLEMENTINE ONLY WORKS ON MRI RUBY AND NOT JRUBY*
+
 Clementine is a gem to use ClojureScript (https://github.com/clojure/clojurescript) from Ruby.
 Clementine is a Tilt (https://github.com/rtomayko/tilt) Template, which is available to use
 on Rails asset pipeline. Also, it is avilable to use in a Tilt way.
@@ -14,14 +16,15 @@ You don't need to compile ClojureScript by yourself anymore. Clementine does for
 
 Clementine runs on Rails 3.1 and later.
 
-Clementine supports JRuby and CRuby. When you use from CRuby, make sure java command is on your PATH.
-
 Please be aware. When you run Clementine on CRuby, you hook up JVM everytime ClojureScript code is changed.
 This takes long time since starting JVM is a heavy weight job.
-For a shorter compilation time, I recommend using JRuby.
 
 Installation
 -----------
+
+*THIS PARTICULAR FORK OF CLEMENTINE ONLY WORKS ON MRI RUBY AND NOT JRUBY*
+
+Make sure you've [install Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 
 ```ruby
 gem install clementine
