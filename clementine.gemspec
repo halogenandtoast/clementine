@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = %q{clojurescript tilt template gem and available to use on Rails asset pipeline.}
 
   s.files         = `git ls-files`.split($/)
-  s.extensions    = ['Rakefile']
+  s.extensions    = ['ext/extconf.rb']
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   # s.add_runtime_dependency "rest-client"
   s.add_dependency "tilt"
   s.add_dependency "activesupport"
+  s.add_dependency "therubyracer"
 end

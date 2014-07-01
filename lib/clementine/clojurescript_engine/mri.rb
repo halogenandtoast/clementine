@@ -9,7 +9,7 @@ module Clementine
   class Error < StandardError; end
 
   class ClojureScriptEngine < ClojureScriptEngineBase
-    def initialize(file, options)
+    def initialize(file, options = {})
       @file = file
       @options = options
       @classpath = CLASSPATH
