@@ -24,7 +24,7 @@ Installation
 
 *THIS PARTICULAR FORK OF CLEMENTINE ONLY WORKS ON MRI RUBY AND NOT JRUBY*
 
-Make sure you've [install Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+Make sure you've [installed Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 
 ```ruby
 gem install clementine
