@@ -1,28 +1,5 @@
-require 'rake/testtask'
+require 'rspec/core/rake_task'
 
-task :default => :bootstrap
+RSpec::Core::RakeTask.new(:spec)
 
-task :bootstrap do
-  # clojurescript home
-  CLOJURESCRIPT_HOME = File.join(File.dirname(__FILE__), "ext/clojure-clojurescript")
-
-  $stdout.print "Bootrapping ClojureScript\n"
-
-  cmd = "cd #{CLOJURESCRIPT_HOME} && git submodule init && git submodule update"
-  %x( #{cmd} )
-
-  # command to download and create jar archives
-  cmd = "#{CLOJURESCRIPT_HOME}/script/bootstrap"
-  %x( #{cmd} )
-
-  # removes unnecessary temporary directory to create google closure jar archives
-  require 'fileutils'
-  FileUtils.rm_rf File.join(File.dirname(__FILE__), './closure')
-
-  FileUtils.mkdir File.join(CLOJURESCRIPT_HOME, 'lib') 
-  FileUtils.mv Dir.glob('lib/*.jar'), File.join(CLOJURESCRIPT_HOME, 'lib')
-end
-
-Rake::TestTask.new do |t|
-  t.pattern = "test/*_test.rb"
-end
+task :default => :spec

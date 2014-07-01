@@ -2,5 +2,4 @@
 
 source "http://rubygems.org"
 
-gem 'tilt'
-
+gemspec

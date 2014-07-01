@@ -1,3 +1,0 @@
-[submodule "ext/clojure-clojurescript"]
-	path = ext/clojure-clojurescript
-	url = https://github.com/clojure/clojurescript.git
